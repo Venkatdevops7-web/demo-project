@@ -54,5 +54,5 @@ It a complete automated infrastrutre build where argocd and kubernetes are tight
 
 ex : argocd.dev.exmaple.com
 
-## Excepation Step for Destroy infra
+## Exception Step for Destroy infra
  We have used the external dns to create route53 records from ingress by using argocd helm chart, so when destroy the infra then it will fail on eks-addon due to multi records created, so once its get failed we need to delete CNAME records manully and then run the destroy pipeline
