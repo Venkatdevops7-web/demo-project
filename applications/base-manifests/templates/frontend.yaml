@@ -1,0 +1,45 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: frontend-{{ .Values.global.instanceName }}
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    a8r.io/description: |
+      The Application for deploying all the resources needed to run Frontend on Kubernetes.
+spec:
+  project: {{ .Values.global.argoProject }}
+  source:
+    path: charts/frontend
+    repoURL: https://github.com/Pawankumar140/NitishKN.git
+    targetRevision: main
+    helm:
+      valueFiles:
+        - "values-{{ .Values.global.instanceName }}.yaml"    
+      values: |
+        ingress:
+          enabled: true
+          annotations:      
+            kubernetes.io/ingress.class: nginx
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+          hosts:
+            - host: app.{{ .Values.global.instanceDomain }}
+              paths:
+                - path: "/"
+                  pathType: Prefix
+          tls:
+            - secretName: app-tls
+              hosts:
+                - app.{{ .Values.global.instanceDomain }}
+        image:
+          pullPolicy: Always
+  destination:
+    namespace: {{ .Values.global.namespace }}
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
