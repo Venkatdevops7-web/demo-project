@@ -31,7 +31,7 @@ It a complete automated infrastrutre build where argocd and kubernetes are tight
 6. Azure DevOps for Build Pipeline
   
 ## Code Repo
-1. advance branch --- having all terraform scripts
+1. terraform branch --- having all terraform scripts
 2. main branch --- having the api deployemt helm charts for argocd
 
 
