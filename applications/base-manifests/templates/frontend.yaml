@@ -12,7 +12,7 @@ spec:
   project: {{ .Values.global.argoProject }}
   source:
     path: charts/frontend
-    repoURL: https://github.com/Pawankumar140/NitishKN.git
+    repoURL: https://github.com/Venkatdevops7-web/demo-project.git
     targetRevision: main
     helm:
       valueFiles:
