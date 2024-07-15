@@ -83,7 +83,7 @@ steps:
     awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
-    inlineScript: >-
+    inlineScript: |
         cd environments/dev/vpc
         yes | terragrunt init -upgrade
         yes | terragrunt destroy --auto-approve
