@@ -30,7 +30,7 @@ steps:
     scriptType: inline
     inlineScript: |
         cd environments/dev/vpc
-        terragrunt init --reconfigure
+        yes | terragrunt init --reconfigure
         terragrunt apply --auto-approve
   displayName: 'terragrunt vpc build'
 
