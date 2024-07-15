@@ -10,7 +10,7 @@ resources:
   repositories:
   - repository: self
     type: git
-    ref: refs/heads/advance
+    ref: refs/heads/terraform
 
 pool:
   vmImage: macOs-latest
