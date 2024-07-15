@@ -31,7 +31,6 @@ steps:
     inlineScript: |
         cd environments/dev/vpc
         terragrunt init --reconfigure
-        terragrunt init -upgrade
         terragrunt apply --auto-approve
   displayName: 'terragrunt vpc build'
 
@@ -41,9 +40,8 @@ steps:
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: |
-        cd environments/dev/cluster_issuer
+        cd environments/dev/eks
         terragrunt init --reconfigure
-        terragrunt init -upgrade
         terragrunt apply --auto-approve
   displayName: 'terragrunt eks build'
 
@@ -55,7 +53,6 @@ steps:
     inlineScript: |
         cd environments/dev/cluster_issuer
         terragrunt init --reconfigure
-        terragrunt init -upgrade
         terragrunt apply --auto-approve
   displayName: 'terragrunt cluster_issuer build'
 
@@ -67,7 +64,6 @@ steps:
     inlineScript: |
         cd environments/dev/argocd
         terragrunt init --reconfigure
-        terragrunt init -upgrade
         terragrunt apply --auto-approve
   displayName: 'terragrunt argocd build'
 
@@ -79,6 +75,5 @@ steps:
     inlineScript: |
         cd environments/dev/eks-addons
         terragrunt init --reconfigure
-        terragrunt init -upgrade
         terragrunt apply --auto-approve
   displayName: 'terragrunt eks-addons build'
