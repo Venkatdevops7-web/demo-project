@@ -25,7 +25,7 @@ steps:
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
   inputs:
-    awsCredentials: 'Pawan_AdminAccess'
+    awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: >-
@@ -36,7 +36,7 @@ steps:
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
   inputs:
-    awsCredentials: 'Pawan_AdminAccess'
+    awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: |
@@ -47,7 +47,7 @@ steps:
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
   inputs:
-    awsCredentials: 'Pawan_AdminAccess'
+    awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: |
@@ -58,7 +58,7 @@ steps:
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
   inputs:
-    awsCredentials: 'Pawan_AdminAccess'
+    awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: |
@@ -69,7 +69,7 @@ steps:
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
   inputs:
-    awsCredentials: 'Pawan_AdminAccess'
+    awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: |
