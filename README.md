@@ -15,11 +15,10 @@ It a complete automated infrastrutre build where argocd and kubernetes are tight
 
 ##### You can refer below path and variable to get actual name of s3 bucket
   
-  {
-  s3_state_bucket  = "${local.name_prefix}-terraform-state-s3" --- (terragrunt.hcl)  
-  project_name     = "desire"  --- (env.hcl)
-  name_prefix      = "${local.project_name}-${local.environment_name}" --- --- (env.hcl)
-  }
+  --> s3_state_bucket  = "${local.name_prefix}-terraform-state-s3" --- (terragrunt.hcl)  
+  --> project_name     = "desire"  --- (env.hcl)
+  --> name_prefix      = "${local.project_name}-${local.environment_name}" --- --- (env.hcl)
+
 
 
 ## Technology Used
