@@ -29,8 +29,8 @@ steps:
     scriptType: inline
     inlineScript: |
         cd environments/dev/cluster_issuer
-        terragrunt init -upgrade
-        terragrunt destroy --auto-approve
+        yes | terragrunt init -upgrade
+        yes | terragrunt destroy --auto-approve
   displayName: 'terragrunt cluster_issuer destroy'
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
@@ -40,8 +40,8 @@ steps:
     scriptType: inline
     inlineScript: |
         cd environments/dev/eks-addons
-        terragrunt init -upgrade
-        terragrunt destroy --auto-approve
+        yes | terragrunt init -upgrade
+        yes | terragrunt destroy --auto-approve
   displayName: 'terragrunt eks-addons destroy'
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
@@ -51,8 +51,8 @@ steps:
     scriptType: inline
     inlineScript: |
         cd environments/dev/argocd
-        terragrunt init -upgrade
-        terragrunt destroy --auto-approve
+        yes | terragrunt init -upgrade
+        yes | terragrunt destroy --auto-approve
   displayName: 'terragrunt argocd destroy'  
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
@@ -62,8 +62,8 @@ steps:
     scriptType: inline
     inlineScript: |
         cd environments/dev/ecr
-        terragrunt init -upgrade
-        terragrunt destroy --auto-approve
+        yes | terragrunt init -upgrade
+        yes | terragrunt destroy --auto-approve
   displayName: 'terragrunt ecr destroy'
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
@@ -73,8 +73,8 @@ steps:
     scriptType: inline
     inlineScript: |
         cd environments/dev/eks
-        terragrunt init -upgrade
-        terragrunt destroy --auto-approve
+        yes | terragrunt init -upgrade
+        yes | terragrunt destroy --auto-approve
   displayName: 'terragrunt eks destroy'
 
 
@@ -85,6 +85,6 @@ steps:
     scriptType: inline
     inlineScript: >-
         cd environments/dev/vpc
-        terragrunt init -upgrade
-        terragrunt destroy --auto-approve
+        yes | terragrunt init -upgrade
+        yes | terragrunt destroy --auto-approve
   displayName: 'terragrunt vpc destroy'
