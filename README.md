@@ -6,19 +6,11 @@ It a complete automated infrastrutre build where argocd and kubernetes are tight
 
 ## Prerequisite
 
-1. AWS Account Access and Secret Key
-2. Github account and PAT Token
-3. Working Domain in AWS Route53 or Delegation for Route53 if third party registrar
-4. Service Connection for Git and AWS to use Pipeline for build the infra
+1. AWS Account Access and Secret Key.
+2. Github account and PAT Token.
+3. Working Domain in AWS Route53 or Delegation for Route53 if third party registrar.
+4. Azure Service Connection for Git and AWS to use in Pipeline for build the infra.
 5. OpenLens Installed to access kubernetes cluster in Graphic way (https://github.com/MuhammedKalkan/OpenLens/releases)
-5. Create s3 bucket on required region for terraform state.
-
-##### You can refer below path and variable to get actual name of s3 bucket
-  
-  --> s3_state_bucket  = "${local.name_prefix}-terraform-state-s3" --- (terragrunt.hcl)  
-  --> project_name     = "desire"  --- (env.hcl)
-  --> name_prefix      = "${local.project_name}-${local.environment_name}" --- --- (env.hcl)
-
 
 
 ## Technology Used
