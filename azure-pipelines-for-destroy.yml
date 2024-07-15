@@ -9,7 +9,7 @@ resources:
   repositories:
   - repository: self
     type: git
-    ref: refs/heads/advance
+    ref: refs/heads/terraform
 
 pool:
   vmImage: macOs-latest
@@ -24,7 +24,7 @@ steps:
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
   inputs:
-    awsCredentials: 'Pawan_AdminAccess'
+    awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: |
@@ -35,18 +35,7 @@ steps:
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
   inputs:
-    awsCredentials: 'Pawan_AdminAccess'
-    regionName: 'ap-south-1'
-    scriptType: inline
-    inlineScript: |
-        cd environments/dev/argocd
-        terragrunt init -upgrade
-        terragrunt destroy --auto-approve
-  displayName: 'terragrunt argocd destroy'
-
-- task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
-  inputs:
-    awsCredentials: 'Pawan_AdminAccess'
+    awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: |
@@ -57,7 +46,29 @@ steps:
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
   inputs:
-    awsCredentials: 'Pawan_AdminAccess'
+    awsCredentials: 'Venkata_Admin_AWS'
+    regionName: 'ap-south-1'
+    scriptType: inline
+    inlineScript: |
+        cd environments/dev/argocd
+        terragrunt init -upgrade
+        terragrunt destroy --auto-approve
+  displayName: 'terragrunt argocd destroy'  
+
+- task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
+  inputs:
+    awsCredentials: 'Venkata_Admin_AWS'
+    regionName: 'ap-south-1'
+    scriptType: inline
+    inlineScript: |
+        cd environments/dev/ecr
+        terragrunt init -upgrade
+        terragrunt destroy --auto-approve
+  displayName: 'terragrunt ecr destroy'
+
+- task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
+  inputs:
+    awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: |
@@ -66,9 +77,10 @@ steps:
         terragrunt destroy --auto-approve
   displayName: 'terragrunt eks destroy'
 
+
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
   inputs:
-    awsCredentials: 'Pawan_AdminAccess'
+    awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: >-
