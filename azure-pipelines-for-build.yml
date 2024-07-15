@@ -28,8 +28,9 @@ steps:
     awsCredentials: 'Venkata_Admin_AWS'
     regionName: 'ap-south-1'
     scriptType: inline
-    inlineScript: >-
+    inlineScript: |
         cd environments/dev/vpc
+        terragrunt init --reconfigure
         terragrunt init -upgrade
         terragrunt apply --auto-approve
   displayName: 'terragrunt vpc build'
@@ -40,7 +41,8 @@ steps:
     regionName: 'ap-south-1'
     scriptType: inline
     inlineScript: |
-        cd environments/dev/eks
+        cd environments/dev/cluster_issuer
+        terragrunt init --reconfigure
         terragrunt init -upgrade
         terragrunt apply --auto-approve
   displayName: 'terragrunt eks build'
@@ -52,6 +54,7 @@ steps:
     scriptType: inline
     inlineScript: |
         cd environments/dev/cluster_issuer
+        terragrunt init --reconfigure
         terragrunt init -upgrade
         terragrunt apply --auto-approve
   displayName: 'terragrunt cluster_issuer build'
@@ -63,6 +66,7 @@ steps:
     scriptType: inline
     inlineScript: |
         cd environments/dev/argocd
+        terragrunt init --reconfigure
         terragrunt init -upgrade
         terragrunt apply --auto-approve
   displayName: 'terragrunt argocd build'
@@ -74,11 +78,7 @@ steps:
     scriptType: inline
     inlineScript: |
         cd environments/dev/eks-addons
+        terragrunt init --reconfigure
         terragrunt init -upgrade
         terragrunt apply --auto-approve
-  displayName: 'terragrunt eks-addons build' 
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  displayName: 'terragrunt eks-addons build'
