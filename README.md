@@ -12,6 +12,9 @@ It a complete automated infrastrutre build where argocd and kubernetes are tight
 4. Azure Service Connection for Git and AWS to use in Pipeline for build the infra.
 5. OpenLens Installed to access kubernetes cluster in Graphic way (https://github.com/MuhammedKalkan/OpenLens/releases)
 
+## Hierarchy to used to create resources 
+1. vpc --> eks --> argocd --> eks-addons --> cluster_issuer --> ecr --> rds
+
 
 ## Technology Used
 1. AWS EKS Cluster
