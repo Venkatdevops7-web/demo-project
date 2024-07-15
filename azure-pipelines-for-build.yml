@@ -31,7 +31,7 @@ steps:
     inlineScript: |
         cd environments/dev/vpc
         yes | terragrunt init --reconfigure
-        terragrunt apply --auto-approve
+        yes | terragrunt apply --auto-approve
   displayName: 'terragrunt vpc build'
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
@@ -42,7 +42,7 @@ steps:
     inlineScript: |
         cd environments/dev/eks
         yes | terragrunt init --reconfigure
-        terragrunt apply --auto-approve
+        yes | terragrunt apply --auto-approve
   displayName: 'terragrunt eks build'
 
 
@@ -54,7 +54,7 @@ steps:
     inlineScript: |
         cd environments/dev/argocd
         yes | terragrunt init --reconfigure
-        terragrunt apply --auto-approve
+        yes | terragrunt apply --auto-approve
   displayName: 'terragrunt argocd build'
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
@@ -65,7 +65,7 @@ steps:
     inlineScript: |
         cd environments/dev/eks-addons
         yes | terragrunt init --reconfigure
-        terragrunt apply --auto-approve
+        yes | terragrunt apply --auto-approve
   displayName: 'terragrunt eks-addons build'
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
@@ -76,7 +76,7 @@ steps:
     inlineScript: |
         cd environments/dev/cluster_issuer
         yes | terragrunt init --reconfigure
-        terragrunt apply --auto-approve
+        yes | terragrunt apply --auto-approve
   displayName: 'terragrunt cluster_issuer build'
 
 - task: AmazonWebServices.aws-vsts-tools.AWSShellScript.AWSShellScript@1
@@ -87,5 +87,5 @@ steps:
     inlineScript: |
         cd environments/dev/ecr
         yes | terragrunt init --reconfigure
-        terragrunt apply --auto-approve
+        yes | terragrunt apply --auto-approve
   displayName: 'terragrunt ecr repo build'
