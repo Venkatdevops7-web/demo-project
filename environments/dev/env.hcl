@@ -2,7 +2,7 @@
   environment_name = "dev"
   aws_account_id   = "211125729272"
   aws_region       = "ap-south-1"
-  project_name     = "webdev"
+  project_name     = "webdemo"
   name_prefix      = "${local.project_name}-${local.environment_name}"
   eks_cluster_name = "${local.name_prefix}-eks-cluster"
   cluster_domain   = "devopsdesire.com"
