@@ -1,12 +1,12 @@
  locals {
   environment_name = "dev"
-  aws_account_id   = "381491919405"
+  aws_account_id   = "211125729272"
   aws_region       = "ap-south-1"
-  project_name     = "desire"
+  project_name     = "webdev"
   name_prefix      = "${local.project_name}-${local.environment_name}"
   eks_cluster_name = "${local.name_prefix}-eks-cluster"
   cluster_domain   = "devopsdesire.com"
-  base_repo_url    = "https://github.com/Pawankumar140/NitishKN.git"
+  base_repo_url    = "https://github.com/Venkatdevops7-web/demo-project.git"
 
 
 
